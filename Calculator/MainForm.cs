@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calculator.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Calculator
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         string oprationPerformed;
         Double? resultValue = null;
         Double? lastresultValue = null;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -303,6 +304,11 @@ namespace Calculator
             }
             textBoxResult.SelectionStart = 0;
             textBoxResult.SelectionLength = textBoxResult.Text.Length;
+        }
+
+        private void infoPicBox_Click(object sender, EventArgs e)
+        {
+            //AboutForm.Show();
         }
     }
 }

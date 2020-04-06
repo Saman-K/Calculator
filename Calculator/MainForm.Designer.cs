@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -50,6 +50,8 @@
             this.textBoxResult = new System.Windows.Forms.TextBox();
             this.labelStoredOperation = new System.Windows.Forms.Label();
             this.labelStoredOperationEqual = new System.Windows.Forms.Label();
+            this.infoPicBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.infoPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -377,11 +379,23 @@
             this.labelStoredOperationEqual.Size = new System.Drawing.Size(0, 16);
             this.labelStoredOperationEqual.TabIndex = 23;
             // 
+            // infoPicBox
+            // 
+            this.infoPicBox.Image = global::Calculator.Properties.Resources.Info_L;
+            this.infoPicBox.Location = new System.Drawing.Point(191, 12);
+            this.infoPicBox.Name = "infoPicBox";
+            this.infoPicBox.Size = new System.Drawing.Size(15, 15);
+            this.infoPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.infoPicBox.TabIndex = 24;
+            this.infoPicBox.TabStop = false;
+            this.infoPicBox.Click += new System.EventHandler(this.infoPicBox_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(218, 227);
+            this.Controls.Add(this.infoPicBox);
             this.Controls.Add(this.labelStoredOperationEqual);
             this.Controls.Add(this.labelStoredOperation);
             this.Controls.Add(this.textBoxResult);
@@ -412,6 +426,7 @@
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.infoPicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,6 +455,7 @@
         private System.Windows.Forms.TextBox textBoxResult;
         private System.Windows.Forms.Label labelStoredOperation;
         private System.Windows.Forms.Label labelStoredOperationEqual;
+        private System.Windows.Forms.PictureBox infoPicBox;
     }
 }
 
