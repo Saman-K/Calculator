@@ -28,7 +28,7 @@ namespace Calculator
 
         }
 
-        private void button_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             if (textBoxResult.Text == "0" && button.Text == ".") { }
@@ -50,7 +50,7 @@ namespace Calculator
             }
         }
 
-        private void operator_Click(object sender, EventArgs e)
+        private void Operator_Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
 
@@ -151,59 +151,59 @@ namespace Calculator
             switch (e.KeyCode)
             {
                 case Keys.NumPad0:
-                    button_Click(button0, e);
+                    Button_Click(button0, e);
                     break;
                 case Keys.NumPad1:
-                    button_Click(button1, e);
+                    Button_Click(button1, e);
                     break;
                 case Keys.NumPad2:
-                    button_Click(button2, e);
+                    Button_Click(button2, e);
                     break;
                 case Keys.NumPad3:
-                    button_Click(button3, e);
+                    Button_Click(button3, e);
                     break;
                 case Keys.NumPad4:
-                    button_Click(button4, e);
+                    Button_Click(button4, e);
                     break;
                 case Keys.NumPad5:
-                    button_Click(button5, e);
+                    Button_Click(button5, e);
                     break;
                 case Keys.NumPad6:
-                    button_Click(button6, e);
+                    Button_Click(button6, e);
                     break;
                 case Keys.NumPad7:
-                    button_Click(button7, e);
+                    Button_Click(button7, e);
                     break;
                 case Keys.NumPad8:
-                    button_Click(button8, e);
+                    Button_Click(button8, e);
                     break;
                 case Keys.NumPad9:
-                    button_Click(button9, e);
+                    Button_Click(button9, e);
                     break;
 
                 case Keys.OemMinus:
                 case Keys.Subtract:
-                    operator_Click(buttonMinus, e);
+                    Operator_Click(buttonMinus, e);
                     break;
 
                 case Keys.Oemplus:
                 case Keys.Add:
-                    operator_Click(buttonPlus, e);
+                    Operator_Click(buttonPlus, e);
                     break;
 
                 case Keys.OemQuestion:
                 case Keys.Divide:
-                    operator_Click(buttonDivide, e);
+                    Operator_Click(buttonDivide, e);
                     break;
 
                 case Keys.D8:
                 case Keys.Multiply:
-                    operator_Click(buttonMultiply, e);
+                    Operator_Click(buttonMultiply, e);
                     break;
 
                 case Keys.OemPeriod:
                 case Keys.Decimal:
-                    operator_Click(buttonPoint, e);
+                    Operator_Click(buttonPoint, e);
                     break;
 
                 case Keys.Delete:
@@ -215,7 +215,7 @@ namespace Calculator
                     break;
 
                 case Keys.Return:
-                    operator_Click(buttonEquals, e);
+                    Operator_Click(buttonEquals, e);
                     break;
                 default:
                     break;
@@ -240,31 +240,31 @@ namespace Calculator
             {
                 case Keys.OemMinus:
                 case Keys.Subtract:
-                    operator_Click(buttonMinus, e);
+                    Operator_Click(buttonMinus, e);
                     break;
 
                 case Keys.Oemplus:
                 case Keys.Add:
-                    operator_Click(buttonPlus, e);
+                    Operator_Click(buttonPlus, e);
                     break;
 
                 case Keys.OemQuestion:
                 case Keys.Divide:
-                    operator_Click(buttonDivide, e);
+                    Operator_Click(buttonDivide, e);
                     break;
 
                 case Keys.D8:
                 case Keys.Multiply:
-                    operator_Click(buttonMultiply, e);
+                    Operator_Click(buttonMultiply, e);
                     break;
 
                 case Keys.OemPeriod:
                 case Keys.Decimal:
-                    operator_Click(buttonPoint, e);
+                    Operator_Click(buttonPoint, e);
                     break;
 
                 case Keys.Return:
-                    operator_Click(buttonEquals, e);
+                    Operator_Click(buttonEquals, e);
                     textBoxResult.SelectionStart = 0;
                     textBoxResult.SelectionLength = textBoxResult.Text.Length;
                     break;
@@ -308,7 +308,21 @@ namespace Calculator
 
         private void infoPicBox_Click(object sender, EventArgs e)
         {
-            //AboutForm.Show();
+            bool winIsOpen = false;
+            foreach (Form win in Application.OpenForms)
+            {
+                if (win.Name == "AboutForm")
+                {
+                    winIsOpen = true;
+                    win.BringToFront();
+                }
+            }
+            if (winIsOpen == false)
+            {
+                    var infoWin = new AboutForm();
+                    infoWin.Show();
+
+            }
         }
     }
 }
